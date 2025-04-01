@@ -18,6 +18,8 @@ import RecipeGenerator from "../components/RecipeGenerator";
 import CodeRefactor from "../components/CodeRefactor";
 import CodeCommentor from "../components/CodeCommentor";
 import LogoMaker from "../components/LogoMaker";
+import IconGenerator from "../components/IconGenerator";
+import ColorPaletteGenerator from "../components/ColorPaletteGenerator";
 
 interface ServiceRendererProps {
   selectedService: string | null;
@@ -71,6 +73,10 @@ const ServiceRenderer = ({
       return <CodeCommentor onBack={() => setSelectedService(null)} />;
     case "logo":
       return <LogoMaker onBack={() => setSelectedService(null)} />;
+    case "icon":
+      return <IconGenerator onBack={() => setSelectedService(null)} />;
+    case "color":
+      return <ColorPaletteGenerator onBack={() => setSelectedService(null)} />;
     default:
       return null;
   }
