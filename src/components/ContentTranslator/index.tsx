@@ -12,23 +12,16 @@ const ContentTranslator = ({ onBack }: { onBack: () => void }) => {
   useScrollToTop();
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
-  // const handleTranslate = () => {
-  //   if (sourceText.trim()) {
-  //     setIsTranslating(true);
-  //     setTimeout(() => {
-  //       setIsTranslating(false);
-  //     }, 1500);
-  //   }
-  // };
-
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<formdata>();
 
   const { mutate, status, data } = useGenerateContent();
 
+  const isValid = !watch("userInput") || !selectedLanguage;
   const onSubmit = handleSubmit(data => {
     const formattedInput = `You are an expert translator fluent in multiple languages. Your task is to accurately translate the given text while preserving its original meaning, tone, and context.
 
@@ -215,13 +208,12 @@ const ContentTranslator = ({ onBack }: { onBack: () => void }) => {
                 </div>
               </div>
 
-              {/* Translate Button */}
               <div className="flex justify-center mt-6">
                 <button
                   type="submit"
-                  disabled={status === "pending"}
+                  disabled={status === "pending" || isValid}
                   className={`px-6 py-3 rounded-lg text-white font-medium flex items-center gap-2 transition-colors ${
-                    status === "pending"
+                    status === "pending" || isValid
                       ? "bg-blue-400 cursor-not-allowed"
                       : "bg-blue-600 hover:bg-blue-700"
                   }`}
