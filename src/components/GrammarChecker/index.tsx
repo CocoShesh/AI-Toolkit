@@ -68,7 +68,6 @@ const GrammarChecker = ({ onBack }: { onBack: () => void }) => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Input Card */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -145,7 +144,6 @@ const GrammarChecker = ({ onBack }: { onBack: () => void }) => {
                 </div>
               </div>
 
-              {/* Results Card */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -231,7 +229,6 @@ const GrammarChecker = ({ onBack }: { onBack: () => void }) => {
               </div>
             </div>
 
-            {/* Features Section */}
             <div className="mt-12">
               <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
                 How It Works
