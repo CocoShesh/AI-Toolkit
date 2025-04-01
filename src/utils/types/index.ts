@@ -37,6 +37,8 @@ export interface formdata {
   companyName?: string;
   logoStyle?: string;
   colorScheme?: string;
+  format?: string;
+  description?: string;
 }
 
 export type ParaphraseMode =
