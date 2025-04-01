@@ -23,11 +23,11 @@ const RecipeGenerator = ({ onBack }: { onBack: () => void }) => {
   });
   const formatMarkdownToHTML = (text: string): string => {
     return text
-      .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // Bold
-      .replace(/\*(?!\s)(.*?)\*/g, "<em>$1</em>") // Italics
-      .replace(/(?:^|\n)\* (.*?)(?=\n|$)/g, "<li>$1</li>") // Bullet points
-      .replace(/(<li>.*?<\/li>)+/gs, "<ul>$&</ul>") // Wrap all <li> in <ul>
-      .replace(/\n/g, "<br>"); // Line breaks
+      .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
+      .replace(/\*(?!\s)(.*?)\*/g, "<em>$1</em>")
+      .replace(/(?:^|\n)\* (.*?)(?=\n|$)/g, "<li>$1</li>")
+      .replace(/(<li>.*?<\/li>)+/gs, "<ul>$&</ul>")
+      .replace(/\n/g, "<br>");
   };
 
   return (
@@ -61,7 +61,6 @@ const RecipeGenerator = ({ onBack }: { onBack: () => void }) => {
               </button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Form Card */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -151,7 +150,6 @@ const RecipeGenerator = ({ onBack }: { onBack: () => void }) => {
                 </div>
               </div>
 
-              {/* Recipe Card */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -264,7 +262,6 @@ const RecipeGenerator = ({ onBack }: { onBack: () => void }) => {
                 </div>
               </div>
             </div>
-            {/* Features Section */}
             <div className="mt-12">
               <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
                 How It Works
@@ -307,7 +304,6 @@ const RecipeGenerator = ({ onBack }: { onBack: () => void }) => {
                 </div>
               </div>
             </div>
-            {/* Additional Features Section */}
             <div className="mt-12 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
                 More Ways to Use This Tool
