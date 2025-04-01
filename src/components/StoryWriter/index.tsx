@@ -10,10 +10,17 @@ const StoryWriter = ({ onBack }: { onBack: () => void }) => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<formdata>();
 
   const { mutate, data, status } = useGenerateContent();
+
+  const isValid =
+    !watch("prompt") ||
+    !watch("genre") ||
+    !watch("length") ||
+    !watch("pointOfView");
 
   const onSubmit = handleSubmit(data => {
     const formattedInput = `Write me a story about ${data.prompt}. the genre of the story is ${data.genre} that has length ${data.length}. the point of view of the story is ${data.pointOfView}`;
@@ -51,7 +58,6 @@ const StoryWriter = ({ onBack }: { onBack: () => void }) => {
               </button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Form Card */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -178,9 +184,9 @@ const StoryWriter = ({ onBack }: { onBack: () => void }) => {
 
                     <button
                       type="submit"
-                      disabled={status === "pending"}
+                      disabled={status === "pending" || isValid}
                       className={`px-5 py-2 rounded-lg text-white font-medium flex items-center gap-2 transition-colors ${
-                        status === "pending"
+                        status === "pending" || isValid
                           ? "bg-blue-400 cursor-not-allowed"
                           : "bg-blue-600 hover:bg-blue-700"
                       }`}
@@ -217,7 +223,6 @@ const StoryWriter = ({ onBack }: { onBack: () => void }) => {
                 </div>
               </div>
 
-              {/* Story Card */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -302,7 +307,6 @@ const StoryWriter = ({ onBack }: { onBack: () => void }) => {
                 </div>
               </div>
             </div>
-            {/* Features Section */}
             <div className="mt-12">
               <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
                 How It Works
