@@ -17,7 +17,7 @@ interface GeminiResponse {
 
 export const generateImage = async (
   userMessage: string
-): Promise<string | null> => {
+): Promise<string[] | null> => {
   try {
     const requestBody = {
       contents: [
@@ -43,10 +43,13 @@ export const generateImage = async (
     );
 
     const parts = response.data.candidates?.[0]?.content?.parts || [];
-    const data =
-      parts[0]?.inlineData?.data ?? parts[1]?.inlineData?.data ?? null;
 
-    return data;
+    const allInlineData = parts
+      .map(part => part.inlineData?.data)
+      .filter((data): data is string => !!data);
+
+    console.table("allInlineData", allInlineData);
+    return allInlineData.length > 0 ? allInlineData : null;
   } catch (error) {
     console.error("Error calling Gemini API:", error);
     return null;
