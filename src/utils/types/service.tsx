@@ -164,7 +164,22 @@ export const services = [
     id: "logo",
     name: "Logo Maker",
     icon: <Palette className="h-6 w-6" />,
-    description: "Design professional logos for your brand or business",
+    description:
+      "Create custom, professional logos for your brand or business.",
+    category: "design",
+  },
+  {
+    id: "icon",
+    name: "Icon Generator",
+    icon: <Image className="h-6 w-6" />,
+    description: "Design unique icons that represent your brand or project.",
+    category: "design",
+  },
+  {
+    id: "color",
+    name: "Color Palette Generator",
+    icon: <Image className="h-6 w-6" />,
+    description: "Design unique icons that represent your brand or project.",
     category: "design",
   },
 ];
