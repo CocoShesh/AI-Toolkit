@@ -39,6 +39,8 @@ export interface formdata {
   colorScheme?: string;
   format?: string;
   description?: string;
+  type?: string;
+  number: number;
 }
 
 export type ParaphraseMode =
@@ -47,3 +49,42 @@ export type ParaphraseMode =
   | "humanize"
   | "academic"
   | "simple";
+
+export const fieldOptions = {
+  users: [
+    "id",
+    "name",
+    "email",
+    "username",
+    "avatar",
+    "address",
+    "phone",
+    "website",
+    "company",
+    "bio",
+  ],
+  products: [
+    "id",
+    "name",
+    "price",
+    "description",
+    "category",
+    "image",
+    "rating",
+    "stock",
+    "brand",
+    "tags",
+  ],
+  transactions: [
+    "id",
+    "date",
+    "amount",
+    "currency",
+    "status",
+    "customer_id",
+    "product_id",
+    "payment_method",
+    "reference",
+    "notes",
+  ],
+};
