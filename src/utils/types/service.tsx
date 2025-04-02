@@ -182,4 +182,18 @@ export const services = [
     description: "Design unique icons that represent your brand or project.",
     category: "design",
   },
+  {
+    id: "regex",
+    name: "Regex Generator",
+    icon: <Image className="h-6 w-6" />,
+    description: "Design unique icons that represent your brand or project.",
+    category: "development",
+  },
+  {
+    id: "mock",
+    name: "Mock Data Generator",
+    icon: <Image className="h-6 w-6" />,
+    description: "Design unique icons that represent your brand or project.",
+    category: "development",
+  },
 ];
