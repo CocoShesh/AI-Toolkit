@@ -16,6 +16,8 @@ import {
   Code,
   Image,
   Utensils,
+  Sliders,
+  Database,
 } from "lucide-react";
 
 export const services = [
@@ -178,21 +180,21 @@ export const services = [
   {
     id: "color",
     name: "Color Palette Generator",
-    icon: <Image className="h-6 w-6" />,
+    icon: <Sliders className="h-6 w-6" />,
     description: "Design unique icons that represent your brand or project.",
     category: "design",
   },
   {
     id: "regex",
     name: "Regex Generator",
-    icon: <Image className="h-6 w-6" />,
+    icon: <Code className="h-6 w-6" />,
     description: "Design unique icons that represent your brand or project.",
     category: "development",
   },
   {
     id: "mock",
     name: "Mock Data Generator",
-    icon: <Image className="h-6 w-6" />,
+    icon: <Database className="h-6 w-6" />,
     description: "Design unique icons that represent your brand or project.",
     category: "development",
   },
