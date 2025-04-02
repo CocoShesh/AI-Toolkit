@@ -20,6 +20,8 @@ import CodeCommentor from "../components/CodeCommentor";
 import LogoMaker from "../components/LogoMaker";
 import IconGenerator from "../components/IconGenerator";
 import ColorPaletteGenerator from "../components/ColorPaletteGenerator";
+import RegexGenerator from "../components/RegexGenerator.tsx";
+import MockDataGenerator from "../components/MockDataGenerator/index.tsx";
 
 interface ServiceRendererProps {
   selectedService: string | null;
@@ -77,6 +79,11 @@ const ServiceRenderer = ({
       return <IconGenerator onBack={() => setSelectedService(null)} />;
     case "color":
       return <ColorPaletteGenerator onBack={() => setSelectedService(null)} />;
+    case "regex":
+      return <RegexGenerator onBack={() => setSelectedService(null)} />;
+    case "mock":
+      return <MockDataGenerator onBack={() => setSelectedService(null)} />;
+
     default:
       return null;
   }
